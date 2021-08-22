@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="wrapper3 mt-5 mb-5">
-	<h2 class="mt-5 mb-5"><b>Login Example</b></h2>
+	<h2 class="mt-5 mb-5"><b>Join Example</b></h2>
 	<form method="post" action="./join_Action.jsp">
 
 		<div id="wrapper">

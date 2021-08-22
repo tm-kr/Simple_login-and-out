@@ -14,8 +14,8 @@
 <div class="wrapper">
 	<h2 style="margin-bottom: 5%"><b>Login & Join Example</b></h2>
 	<div>
-		<button type="button" class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/login'">로그인</button>
-		<button type="button" class="btn btn-outline-primary" onclick="location.href='${pageContext.request.contextPath}/join'">회원가입</button>
+		<button type="button" class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/loginForm'">로그인</button>
+		<button type="button" class="btn btn-outline-primary" onclick="location.href='${pageContext.request.contextPath}/joinForm'">회원가입</button>
 	</div>
 </div>
 
