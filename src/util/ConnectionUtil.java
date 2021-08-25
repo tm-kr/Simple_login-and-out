@@ -12,7 +12,7 @@ public class ConnectionUtil {
 	static {
 		try {
 			Context ctx = new InitialContext();
-			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/login");
+			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/BOARD");
 		}catch (Exception e){
 			e.printStackTrace();
 		}

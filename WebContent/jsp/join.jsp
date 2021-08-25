@@ -13,7 +13,7 @@
 <body>
 <div class="wrapper3 mt-5 mb-5">
 	<h2 class="mt-5 mb-5"><b>Join Example</b></h2>
-	<form method="post" action="./join_Action.jsp">
+	<form method="post" action="${pageContext.request.contextPath}/join">
 
 		<div id="wrapper">
 
@@ -24,7 +24,7 @@
 					<h3 class="join_title">
 						<label for="id">아이디</label>
 					</h3>
-					<span class="box int_id"> <input type="text" id="id"
+					<span class="box int_id"> <input type="text" id="id" name="id"
 						class="int" maxlength="20">
 					</span> <span class="error_next_box"></span>
 				</div>
@@ -34,7 +34,7 @@
 					<h3 class="join_title">
 						<label for="pswd1">비밀번호</label>
 					</h3>
-					<span class="box int_pass"> <input type="password"
+					<span class="box int_pass"> <input type="password" name="password"
 						id="pswd1" class="int" maxlength="20"> <span id="alertTxt">사용불가</span>
 						<img src="${pageContext.request.contextPath}/img/m_icon_pass.png" id="pswd1_img1" class="pswdImg">
 					</span> <span class="error_next_box"></span>
@@ -45,7 +45,7 @@
 					<h3 class="join_title">
 						<label for="pswd2">비밀번호 재확인</label>
 					</h3>
-					<span class="box int_pass_check"> <input type="password"
+					<span class="box int_pass_check"> <input type="password" 
 						id="pswd2" class="int" maxlength="20"> <img
 						src="${pageContext.request.contextPath}/img/m_icon_check_disable.png" id="pswd2_img1" class="pswdImg">
 					</span> <span class="error_next_box"></span>
@@ -56,7 +56,7 @@
 					<h3 class="join_title">
 						<label for="name">이름</label>
 					</h3>
-					<span class="box int_name"> <input type="text" id="name"
+					<span class="box int_name"> <input type="text" id="name" name="name"
 						class="int" maxlength="20">
 					</span> <span class="error_next_box"></span>
 				</div>
@@ -71,14 +71,14 @@
 					<div id="bir_wrap">
 						<!-- BIRTH_YY -->
 						<div id="bir_yy">
-							<span class="box"> <input type="text" id="yy" class="int"
+							<span class="box"> <input type="text" id="yy" class="int" name="yyyy"
 								maxlength="4" placeholder="년(4자)">
 							</span>
 						</div>
 
 						<!-- BIRTH_MM -->
 						<div id="bir_mm">
-							<span class="box"> <select id="mm" class="sel">
+							<span class="box"> <select id="mm" class="sel" name="mm">
 									<option>월</option>
 									<option value="01">1</option>
 									<option value="02">2</option>
@@ -98,7 +98,7 @@
 
 						<!-- BIRTH_DD -->
 						<div id="bir_dd">
-							<span class="box"> <input type="text" id="dd" class="int"
+							<span class="box"> <input type="text" id="dd" class="int" name="dd"
 								maxlength="2" placeholder="일">
 							</span>
 						</div>
@@ -112,11 +112,11 @@
 					<h3 class="join_title">
 						<label for="gender">성별</label>
 					</h3>
-					<span class="box gender_code"> <select id="gender"
+					<span class="box gender_code"> <select id="gender" name="gender"
 						class="sel">
 							<option>성별</option>
-							<option value="M">남자</option>
-							<option value="F">여자</option>
+							<option value="Male">남자</option>
+							<option value="Female">여자</option>
 					</select>
 					</span> <span class="error_next_box">필수 정보입니다.</span>
 				</div>
@@ -133,7 +133,7 @@
 
 				<!-- JOIN BTN-->
 				<div class="btn_area">
-					<button type="submit" class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/login'">회원가입</button>
+					<button type="submit" class="btn btn-primary">회원가입</button>
 				</div>
 
 

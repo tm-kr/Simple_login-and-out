@@ -6,7 +6,7 @@ public class MemberDTO {
 	private String id;
 	private String password;
 	private String name;
-	private Date birth;
+	private String birth;
 	private String gender;
 	private String email;
 	private Date regdate;
@@ -15,14 +15,13 @@ public class MemberDTO {
 	public MemberDTO() {
 		
 	}
-	public MemberDTO(String id, String password, String name, Date birth, String gender, String email, Date regdate) {
+	public MemberDTO(String id, String password, String name, String birth, String gender, String email) {
 		this.id = id;
 		this.password = password;
 		this.name = name;
 		this.birth = birth;
 		this.gender = gender;
 		this.email = email;
-		this.regdate = regdate;
 	}
 	public String getId() {
 		return id;
@@ -42,10 +41,10 @@ public class MemberDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getBirth() {
+	public String getBirth() {
 		return birth;
 	}
-	public void setBirth(Date birth) {
+	public void setBirth(String birth) {
 		this.birth = birth;
 	}
 	public String getGender() {

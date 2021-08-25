@@ -8,12 +8,22 @@ import java.sql.SQLException;
 
 import util.ConnectionUtil;
 
-public class memberDAO {
+public class MemberDAO {
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-	
+	private static MemberDAO instance = null;
+	public MemberDAO(){}
+	public static MemberDAO getInstance(){
+		if(instance == null){
+			synchronized(MemberDAO.class){
+				instance = new MemberDAO();
+			}
+		}
+		return instance;
+	}
+
 	public void join(MemberDTO memberDTO) {
 		try {
 			String SQL = "insert into MEMBER values("
@@ -23,7 +33,7 @@ public class memberDAO {
 			pstmt.setString(1, memberDTO.getId());
 			pstmt.setString(2, memberDTO.getPassword());
 			pstmt.setString(3, memberDTO.getName());
-			pstmt.setDate(4, (Date) memberDTO.getBirth());
+			pstmt.setString(4, memberDTO.getBirth());
 			pstmt.setString(5, memberDTO.getGender());
 			pstmt.setString(6, memberDTO.getEmail());
 			
@@ -56,4 +66,11 @@ public class memberDAO {
 		}
 		return false;
 	}
+	 public Date transformDate(String year, String month, String day)
+	    {
+	        String date = year+"-"+month+"-"+day;
+	        Date d = Date.valueOf(date);
+	        
+	        return d;
+	    }
 }
