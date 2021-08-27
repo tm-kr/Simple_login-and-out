@@ -48,15 +48,13 @@ public class MemberDAO {
 	
 	public boolean login(String id, String password) {
 		try {
-			String SQL = "select ID, PASSWORD FROM MEMBER WHERE ID=? PASSWORD=?";
+			String SQL = "select ID, PASSWORD FROM MEMBER WHERE ID=? and PASSWORD=?";
 			conn = ConnectionUtil.getConnection();
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, id);
 			pstmt.setString(2, password);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				return true;
-			}
+			return true;
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
@@ -66,11 +64,4 @@ public class MemberDAO {
 		}
 		return false;
 	}
-	 public Date transformDate(String year, String month, String day)
-	    {
-	        String date = year+"-"+month+"-"+day;
-	        Date d = Date.valueOf(date);
-	        
-	        return d;
-	    }
 }

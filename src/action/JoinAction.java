@@ -40,7 +40,7 @@ public class JoinAction extends HttpServlet{
 			PrintWriter script = resp.getWriter();
 			script.println("<script>");
 			script.println("alert ('회원가입을 축하드립니다.');");
-			script.println("location.href = 'jsp/login.jsp'");
+			script.println("location.href = 'login'");
 			script.println("</script>");
 			script.close();
 			return;

@@ -13,7 +13,7 @@
 <body>
 <div class="wrapper2">
 	<h2 class="mt-5 mb-5"><b>Login Example</b></h2>
-	<form action="">
+	<form method="post" action="${pageContext.request.contextPath}/login">
 		<input type="text" class="form-control" placeholder="아이디" name="id" ><br>
 		<input type="password" class="form-control mb-5" placeholder="비밀번호" name="pass">
 		<div>

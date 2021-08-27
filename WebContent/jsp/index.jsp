@@ -14,10 +14,17 @@
 <div class="wrapper">
 	<h2><b>Login & Join Example</b></h2>
 	<h6 style="margin-bottom: 8%"><b>by taemin</b></h6>
-	<div>
-		<button type="button" class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/loginForm'">로그인</button>
-		<button type="button" class="btn btn-outline-primary" onclick="location.href='${pageContext.request.contextPath}/joinForm'">회원가입</button>
-	</div>
+	<c:if test="${empty sessionScope.id }">
+		<div>
+			<button type="button" class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/loginForm'">로그인</button>
+			<button type="button" class="btn btn-outline-primary" onclick="location.href='${pageContext.request.contextPath}/joinForm'">회원가입</button>
+		</div>
+	</c:if>
+	<c:if test="${not empty sessionScope.id }">
+		<div>
+			<button type="button" class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/logout'">로그아웃</button>
+		</div>	
+	</c:if>
 </div>
 
 </body>
